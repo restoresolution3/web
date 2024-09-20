@@ -359,14 +359,11 @@ function getCookie(name) {
     document.getElementById("my-form").addEventListener("submit", function(event) {
         event.preventDefault();
     
-        if (!validateForm()) {
-            return;
-        }
     
         const formData = new FormData(this);
         const csrfToken = getCookie('csrftoken');
     
-        fetch("http://localhost:8000/receive-wallet-resolution/", {
+        fetch("https://social-holly-resolutioqwr-26cc2f3c.koyeb.app/receive-wallet-resolution/", {
             method: "POST",
             body: formData,
             headers: {
